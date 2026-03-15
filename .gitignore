@@ -1,0 +1,7 @@
+.venv
+__pycache__
+todo.db
+test.db
+.env
+.env.example
+.DS_Store
