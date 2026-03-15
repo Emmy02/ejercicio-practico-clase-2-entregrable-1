@@ -8,8 +8,8 @@ class Author(Base):
     __tablename__ = "authors"
 
     id          = Column(Integer, primary_key=True, index=True)
-    name        = Column(String, nullable=False)
-    email       = Column(String, unique=True, nullable=False)
-    created_at  = Column(DateTime, default=datetime.utcnow)
+    nombre        = Column(String, nullable=False)
+    correo       = Column(String, unique=True, nullable=False)
+    fecha_creacion  = Column(DateTime, default=datetime.utcnow)
 
-    todos = relationship("Todo", back_populates="author")
+    tasks = relationship("Task", back_populates="author")

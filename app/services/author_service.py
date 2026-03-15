@@ -11,7 +11,7 @@ def get_by_id(db: Session, author_id: int):
     return db.query(Author).filter(Author.id == author_id).first()
 
 def create(db: Session, data: AuthorCreate):
-    existing = db.query(Author).filter(Author.email == data.email).first()
+    existing = db.query(Author).filter(Author.correo == data.correo).first()
     if existing:
         raise HTTPException(status_code=409, detail="Email already registered")
     author = Author(**data.model_dump())

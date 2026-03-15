@@ -1,6 +1,6 @@
 .venv
 __pycache__
-todo.db
+task.db
 test.db
 .env
 .env.example

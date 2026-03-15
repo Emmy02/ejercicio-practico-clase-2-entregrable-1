@@ -2,19 +2,19 @@ import logging
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.responses import JSONResponse
 from app.database import Base, engine
-from app.routers import todos, authors
+from app.routers import tasks, authors
 
 from app.models import author 
 
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="TODO App")
-app.include_router(todos.router)
+app = FastAPI(title="Task Management App")
+app.include_router(tasks.router)
 app.include_router(authors.router)
 
 @app.get("/")
 def root():
-    return {"message": "TODO API is running"}
+    return {"message": "Task Management API"}
 
 # --- Logging ---
 logging.basicConfig(

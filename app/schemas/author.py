@@ -2,22 +2,22 @@ from pydantic import BaseModel, EmailStr, ConfigDict, Field
 from typing import List
 
 class AuthorCreate(BaseModel):
-    name: str = Field(..., min_length=3)
-    email: EmailStr
+    nombre: str = Field(..., min_length=3)
+    correo: EmailStr
 
-class TodoSummary(BaseModel):
+class TaskSummary(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
     id: int
-    title: str
-    completed: bool
+    titulo: str
+    completada: bool
 
 class AuthorResponse(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
     id: int
-    name: str
-    email: str
-    todos: List[TodoSummary] = []
+    nombre: str
+    correo: str
+    tasks: List[TaskSummary] = []
 
 AuthorResponse.model_rebuild()

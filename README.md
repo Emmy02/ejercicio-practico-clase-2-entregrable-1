@@ -12,13 +12,13 @@ app/
 ├── database.py         # Configuración de la base de datos y modelos
 ├── models/             # Modelos de la base de datos
 │   ├── author.py
-│   └── todo.py
+│   └── task.py
 ├── schemas/            # Esquemas de Pydantic para validación y serialización
 │   ├── author.py
-│   └── todo.py
+│   └── task.py
 └── routers/            # Controladores de las rutas
     ├── authors.py
-    └── todos.py
+    └── tasks.py
 ```
 
 ## Requisitos Previos
@@ -61,13 +61,13 @@ El servidor estará disponible en `http://localhost:8000`.
 - `PUT /authors/{author_id}/`: Actualizar un autor
 - `DELETE /authors/{author_id}/`: Eliminar un autor
 
-### Tareas (Todos)
+### Tareas (Tasks)
 
-- `POST /todos/`: Crear una nueva tarea
-- `GET /todos/`: Obtener todas las tareas
-- `GET /todos/{todo_id}/`: Obtener una tarea por ID
-- `PUT /todos/{todo_id}/`: Actualizar una tarea
-- `DELETE /todos/{todo_id}/`: Eliminar una tarea
+- `POST /tasks/`: Crear una nueva tarea
+- `GET /tasks/`: Obtener todas las tareas
+- `GET /tasks/{task_id}/`: Obtener una tarea por ID
+- `PUT /tasks/{task_id}/`: Actualizar una tarea
+- `DELETE /tasks/{task_id}/`: Eliminar una tarea
 
 ## Documentación de la API
 
@@ -82,7 +82,7 @@ Para ejecutar los tests automáticos:
 ### Primero hay que borrar la base de datos
 
 ```bash
-rm app/todo.db
+rm app/task.db
 ```
 
 ### Luego ejecutar los tests
